@@ -1,0 +1,24 @@
+# Secrets
+.env
+
+# Google OAuth credentials and tokens
+credentials/google_oauth_client.json
+credentials/token.json
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Logs
+logs/*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
