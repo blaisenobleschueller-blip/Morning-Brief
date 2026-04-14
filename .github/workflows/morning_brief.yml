@@ -1,0 +1,28 @@
+name: Morning Brief
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # 7:00 AM CDT (UTC-5). Change to '0 13 * * *' in winter (CST).
+  workflow_dispatch:       # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  send-brief:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create .env from secret
+        run: echo "${{ secrets.ENV_FILE }}" > .env
+
+      - name: Run Morning Brief
+        run: python main.py
