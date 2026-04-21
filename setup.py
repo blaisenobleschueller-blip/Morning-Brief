@@ -37,12 +37,16 @@ def main():
     print("\n--- Required: Anthropic ---")
     anthropic_key = ask("Anthropic API key (from console.anthropic.com)", secret=True)
 
-    print("\n--- Required: Twilio ---")
-    print("Find these at console.twilio.com under Account Info\n")
-    twilio_sid = ask("Account SID (starts with AC)")
-    twilio_token = ask("Auth Token", secret=True)
-    twilio_from = ask("Your Twilio phone number (e.g. +15005551234)")
-    twilio_to = ask("Your personal cell number to receive SMS (e.g. +12125551234)")
+    print("\n--- Required: Gmail (for sending SMS) ---")
+    print("You need a Gmail App Password (not your regular password).")
+    print("Enable 2FA at myaccount.google.com, then visit myaccount.google.com/apppasswords\n")
+    gmail_address = ask("Your Gmail address (e.g. you@gmail.com)")
+    gmail_app_password = ask("Gmail App Password (16-char code, no spaces)", secret=True)
+    print("\nYour carrier SMS gateway address:")
+    print("  T-Mobile:  1xxxxxxxxxx@tmomail.net")
+    print("  AT&T:      1xxxxxxxxxx@txt.att.net")
+    print("  Verizon:   1xxxxxxxxxx@vtext.com")
+    sms_to = ask("SMS gateway address (e.g. 16127074194@tmomail.net)")
 
     print("\n--- Weather ---")
     weather_location = ask("Your city", default="New York,US")
@@ -62,10 +66,9 @@ def main():
 
 # --- REQUIRED ---
 ANTHROPIC_API_KEY={anthropic_key}
-TWILIO_ACCOUNT_SID={twilio_sid}
-TWILIO_AUTH_TOKEN={twilio_token}
-TWILIO_FROM_NUMBER={twilio_from}
-TWILIO_TO_NUMBER={twilio_to}
+GMAIL_ADDRESS={gmail_address}
+GMAIL_APP_PASSWORD={gmail_app_password}
+SMS_TO_ADDRESS={sms_to}
 
 # --- FEATURE FLAGS ---
 ENABLE_WEATHER=true

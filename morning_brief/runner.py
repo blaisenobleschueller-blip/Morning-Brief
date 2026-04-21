@@ -51,7 +51,7 @@ def run() -> None:
     briefing = summarize(results, config)
     print(f"[runner] Briefing ({len(briefing)} chars):\n{briefing}\n")
 
-    print("[runner] Sending SMS via Twilio...")
+    print("[runner] Sending SMS via Gmail...")
     try:
         sid = send_sms(briefing, config)
         print(f"[runner] SMS sent. SID: {sid}")

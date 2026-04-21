@@ -41,10 +41,9 @@ def _int(key: str, default: int) -> int:
 class Config:
     # --- Required ---
     anthropic_api_key: str
-    twilio_account_sid: str
-    twilio_auth_token: str
-    twilio_from_number: str
-    twilio_to_number: str
+    gmail_address: str
+    gmail_app_password: str
+    sms_to_address: str  # e.g. 16127074194@tmomail.net
 
     # --- Feature flags ---
     enable_news: bool
@@ -86,10 +85,9 @@ def load_config() -> Config:
     return Config(
         # Required
         anthropic_api_key=_require("ANTHROPIC_API_KEY"),
-        twilio_account_sid=_require("TWILIO_ACCOUNT_SID"),
-        twilio_auth_token=_require("TWILIO_AUTH_TOKEN"),
-        twilio_from_number=_require("TWILIO_FROM_NUMBER"),
-        twilio_to_number=_require("TWILIO_TO_NUMBER"),
+        gmail_address=_require("GMAIL_ADDRESS"),
+        gmail_app_password=_require("GMAIL_APP_PASSWORD"),
+        sms_to_address=_require("SMS_TO_ADDRESS"),
 
         # Feature flags
         enable_news=_flag("ENABLE_NEWS", default=True),
