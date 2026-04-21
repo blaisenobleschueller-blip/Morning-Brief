@@ -43,7 +43,8 @@ class Config:
     anthropic_api_key: str
     gmail_address: str
     gmail_app_password: str
-    sms_to_address: str  # e.g. 16127074194@tmomail.net
+    to_email: str
+    recipients_file: str
 
     # --- Feature flags ---
     enable_news: bool
@@ -87,7 +88,8 @@ def load_config() -> Config:
         anthropic_api_key=_require("ANTHROPIC_API_KEY"),
         gmail_address=_require("GMAIL_ADDRESS"),
         gmail_app_password=_require("GMAIL_APP_PASSWORD"),
-        sms_to_address=_require("SMS_TO_ADDRESS"),
+        to_email=os.getenv("TO_EMAIL", ""),
+        recipients_file=os.getenv("RECIPIENTS_FILE", "recipients.json"),
 
         # Feature flags
         enable_news=_flag("ENABLE_NEWS", default=True),

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Blaise",
+    "email": "blaisenobleschueller@gmail.com",
+    "location": "Chicago,US",
+    "morning": true,
+    "afternoon": true
+  },
+  {
+    "name": "C Fish",
+    "email": "charliefisher00@gmail.com",
+    "location": "Chicago,US",
+    "morning": true,
+    "afternoon": false
+  },
+  {
+    "name": "1a",
+    "email": "tommywalsh4@gmail.com",
+    "location": "Chicago,US",
+    "morning": true,
+    "afternoon": false
+  },
+  {
+    "name": "GB",
+    "email": "markdwgibson@gmail.com",
+    "location": "Manhattan,US",
+    "morning": true,
+    "afternoon": false
+  }
+]

@@ -1,0 +1,66 @@
+name: Morning & Afternoon Brief
+
+on:
+  schedule:
+    - cron: "30 11 * * *"  # 6:30 AM CST (UTC-6)
+    - cron: "30 21 * * *"  # 4:30 PM CST (UTC-6)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Run mode"
+        required: true
+        default: "morning"
+        type: choice
+        options:
+          - morning
+          - afternoon
+
+jobs:
+  send-brief:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Determine mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+          elif [ "$(date -u +%H)" = "11" ]; then
+            echo "mode=morning" >> $GITHUB_OUTPUT
+          else
+            echo "mode=afternoon" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run brief
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          ENABLE_WEATHER: "true"
+          ENABLE_NEWS: "true"
+          ENABLE_MARKET: "true"
+          ENABLE_CALENDAR: "false"
+          ENABLE_CUSTOM: "false"
+          WEATHER_LOCATION: "Chicago,US"
+          WEATHER_PROVIDER: "wttr"
+          NEWS_FEEDS: "https://feeds.bbci.co.uk/news/rss.xml,https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+          NEWS_MAX_ITEMS_PER_FEED: "5"
+          ENABLE_QQQM_HOLDINGS: "true"
+          QQQM_TOP_N: "10"
+          ENABLE_CRYPTO: "true"
+          STOCK_WATCHLIST: "NVDA,AAPL,MSFT,AMZN,TSM,XOM,V,JPM,USB,WMT,CAT,FDX"
+          ANTHROPIC_MODEL: "claude-haiku-4-5"
+          SMS_TARGET_CHARS: "280"
+          BRIEFING_STYLE: "concise"
+          RECIPIENT_NAME: "Blaise"
+        run: python main.py --mode ${{ steps.mode.outputs.mode }}
