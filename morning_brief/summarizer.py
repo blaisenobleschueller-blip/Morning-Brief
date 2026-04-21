@@ -26,15 +26,15 @@ def _build_prompt(results: list[FetchResult], config: Config) -> tuple[str, str]
         else f"Aim for around {max_tokens_hint} characters."
     )
 
-    system = f"""You are a sharp, warm morning briefing assistant. You write a daily SMS briefing{name_part}.
+    system = f"""You are a sharp, warm morning briefing assistant. You write a daily email briefing{name_part}.
 
 Rules:
-- NO markdown, NO bullet symbols, NO asterisks, NO hashtags — plain text only (SMS renders these as clutter)
+- NO markdown, NO bullet symbols, NO asterisks, NO hashtags — plain text only
 - Use short punchy sentences separated by line breaks
-- Lead with weather, then top news headline, then market snapshot, then calendar
+- Structure: weather, then 2-3 top news headlines (ALWAYS include these — never skip news), then market snapshot, then calendar
 - Include the QQQM top holdings if provided
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed)
-- {style_note}
+- Target around 800-1000 characters total
 - If a section is missing data, skip it silently{unavailable_note}"""
 
     # Build the data sections
@@ -53,7 +53,7 @@ def summarize(results: list[FetchResult], config: Config) -> str:
 
     system, user = _build_prompt(results, config)
 
-    max_tokens = 512 if config.briefing_style == "concise" else 1024
+    max_tokens = 1024
 
     message = client.messages.create(
         model=config.anthropic_model,
