@@ -18,7 +18,14 @@ class WeatherFetcher(BaseFetcher):
             if self._config.weather_provider == "openweathermap":
                 content = self._fetch_openweathermap()
             else:
-                content = self._fetch_wttr()
+                try:
+                    content = self._fetch_wttr()
+                except Exception:
+                    # Fallback to OpenWeatherMap if wttr.in is down
+                    if self._config.openweathermap_api_key:
+                        content = self._fetch_openweathermap()
+                    else:
+                        raise
             return FetchResult(source_name="Weather", content=content, success=True)
         except Exception as e:
             return FetchResult(source_name="Weather", content="", success=False, error=str(e))

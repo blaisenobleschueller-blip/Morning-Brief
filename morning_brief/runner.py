@@ -70,12 +70,14 @@ def run() -> None:
         print(f"[runner] Preparing briefing for {name} ({email})...")
 
         # Build per-recipient config overrides
-        recipient_config = dataclasses.replace(
-            config,
+        overrides = dict(
             to_email=email,
             recipient_name=name,
             weather_location=location,
         )
+        if args.mode == "afternoon":
+            overrides["briefing_style"] = "afternoon"
+        recipient_config = dataclasses.replace(config, **overrides)
 
         results = list(shared_results)
 
