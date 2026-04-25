@@ -33,6 +33,7 @@ Rules:
 - Use short punchy sentences separated by line breaks
 - Structure: weather, then 2-3 top news headlines (ALWAYS include these — never skip news), then market snapshot, then calendar
 - Include the QQQM top holdings if provided
+- If the market data says "MARKETS ARE CLOSED THIS WEEKEND", mention that markets are closed and frame the numbers as a weekly recap
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed)
 - Target around 800-1000 characters total
 - If a section is missing data, skip it silently{unavailable_note}"""

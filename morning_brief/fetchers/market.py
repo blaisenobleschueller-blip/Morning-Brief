@@ -22,6 +22,28 @@ _CRYPTO = [
 ]
 
 
+def _is_weekend() -> bool:
+    """Return True if today is Saturday (5) or Sunday (6)."""
+    return date.today().weekday() >= 5
+
+
+def _weekly_change(ticker_symbol: str) -> tuple[str, str]:
+    """Return (price_str, weekly_pct_change_str) using 5-day history."""
+    try:
+        t = yf.Ticker(ticker_symbol)
+        hist = t.history(period="5d")
+        if len(hist) < 2:
+            return "N/A", "N/A"
+        last = hist["Close"].iloc[-1]
+        first = hist["Close"].iloc[0]
+        price_str = f"${last:,.2f}" if last >= 1 else f"${last:.4f}"
+        pct = (last - first) / first * 100
+        sign = "+" if pct >= 0 else ""
+        return price_str, f"{sign}{pct:.2f}% this week"
+    except Exception:
+        return "N/A", "N/A"
+
+
 def _pct_change(ticker_symbol: str) -> str:
     """Return a formatted '±X.XX%' string for the day's price change."""
     try:
@@ -126,35 +148,66 @@ class MarketFetcher(BaseFetcher):
     def fetch(self) -> FetchResult:
         try:
             lines: list[str] = []
+            weekend = _is_weekend()
 
-            # --- Major indices ---
-            lines.append("Market Indices:")
-            for symbol, label in _INDICES:
-                price, pct = _price_and_pct(symbol)
-                lines.append(f"  {label}: {price} ({pct})")
+            if weekend:
+                lines.append("MARKETS ARE CLOSED THIS WEEKEND\n")
+                lines.append("Weekly Summary:")
 
-            # --- QQQM ---
-            qqqm_price, qqqm_pct = _price_and_pct("QQQM")
-            lines.append(f"\nQQQM: {qqqm_price} ({qqqm_pct})")
-            if self._config.enable_qqqm_holdings:
-                lines.append(_qqqm_holdings(self._config.qqqm_top_n))
+                # --- Major indices (weekly) ---
+                for symbol, label in _INDICES:
+                    price, pct = _weekly_change(symbol)
+                    lines.append(f"  {label}: {price} ({pct})")
 
-            # --- Crypto ---
-            if self._config.enable_crypto:
-                lines.append("\nCrypto:")
-                for symbol, label in _CRYPTO:
+                # --- QQQM (weekly) ---
+                qqqm_price, qqqm_pct = _weekly_change("QQQM")
+                lines.append(f"\nQQQM: {qqqm_price} ({qqqm_pct})")
+                if self._config.enable_qqqm_holdings:
+                    lines.append(_qqqm_holdings(self._config.qqqm_top_n))
+
+                # --- Crypto (still trades on weekends) ---
+                if self._config.enable_crypto:
+                    lines.append("\nCrypto (live):")
+                    for symbol, label in _CRYPTO:
+                        price, pct = _price_and_pct(symbol)
+                        lines.append(f"  {label}: {price} ({pct})")
+
+                # --- Watchlist (weekly) ---
+                if self._config.stock_watchlist:
+                    lines.append("\nWatchlist (weekly):")
+                    for symbol in self._config.stock_watchlist:
+                        price, pct = _weekly_change(symbol)
+                        lines.append(f"  {symbol}: {price} ({pct})")
+
+            else:
+                # --- Major indices ---
+                lines.append("Market Indices:")
+                for symbol, label in _INDICES:
                     price, pct = _price_and_pct(symbol)
                     lines.append(f"  {label}: {price} ({pct})")
 
-            # --- User watchlist ---
-            if self._config.stock_watchlist:
-                lines.append("\nWatchlist:")
-                for symbol in self._config.stock_watchlist:
-                    price, pct = _price_and_pct(symbol)
-                    lines.append(f"  {symbol}: {price} ({pct})")
+                # --- QQQM ---
+                qqqm_price, qqqm_pct = _price_and_pct("QQQM")
+                lines.append(f"\nQQQM: {qqqm_price} ({qqqm_pct})")
+                if self._config.enable_qqqm_holdings:
+                    lines.append(_qqqm_holdings(self._config.qqqm_top_n))
 
-            # --- Earnings today ---
-            lines.append(f"\n{_earnings_today()}")
+                # --- Crypto ---
+                if self._config.enable_crypto:
+                    lines.append("\nCrypto:")
+                    for symbol, label in _CRYPTO:
+                        price, pct = _price_and_pct(symbol)
+                        lines.append(f"  {label}: {price} ({pct})")
+
+                # --- User watchlist ---
+                if self._config.stock_watchlist:
+                    lines.append("\nWatchlist:")
+                    for symbol in self._config.stock_watchlist:
+                        price, pct = _price_and_pct(symbol)
+                        lines.append(f"  {symbol}: {price} ({pct})")
+
+                # --- Earnings today ---
+                lines.append(f"\n{_earnings_today()}")
 
             return FetchResult(
                 source_name="Market",
