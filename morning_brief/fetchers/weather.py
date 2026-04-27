@@ -32,11 +32,46 @@ class WeatherFetcher(BaseFetcher):
 
     def _fetch_wttr(self) -> str:
         location = self._config.weather_location
-        # format=4 gives: "Location: condition temp (feels like), humidity, wind"
-        url = f"https://wttr.in/{location}?format=%l:+%C,+%t+(feels+like+%f),+humidity+%h,+wind+%w"
-        resp = httpx.get(url, timeout=_TIMEOUT, follow_redirects=True)
+        # Get current conditions
+        current_url = f"https://wttr.in/{location}?format=%l:+%C,+%t+(feels+like+%f),+humidity+%h,+wind+%w"
+        resp = httpx.get(current_url, timeout=_TIMEOUT, follow_redirects=True)
         resp.raise_for_status()
-        return resp.text.strip()
+        current = resp.text.strip()
+
+        # Get forecast (JSON format for today's forecast including rain/snow)
+        forecast_url = f"https://wttr.in/{location}?format=j1"
+        resp2 = httpx.get(forecast_url, timeout=_TIMEOUT, follow_redirects=True)
+        resp2.raise_for_status()
+        data = resp2.json()
+
+        forecast_parts = [current]
+        today = data.get("weather", [{}])[0]
+        if today:
+            high = today.get("maxtempF", "")
+            low = today.get("mintempF", "")
+            if high and low:
+                forecast_parts.append(f"High {high}°F, Low {low}°F")
+            hourly = today.get("hourly", [])
+            precip_hours = []
+            for h in hourly:
+                chance = int(h.get("chanceofrain", "0"))
+                if chance >= 30:
+                    time_val = int(h.get("time", "0"))
+                    hour_label = f"{time_val // 100}:00" if time_val else "0:00"
+                    precip_hours.append(f"{hour_label} ({chance}%)")
+            if precip_hours:
+                forecast_parts.append(f"Rain likely: {', '.join(precip_hours)}")
+            snow_hours = []
+            for h in hourly:
+                chance = int(h.get("chanceofsnow", "0"))
+                if chance >= 30:
+                    time_val = int(h.get("time", "0"))
+                    hour_label = f"{time_val // 100}:00" if time_val else "0:00"
+                    snow_hours.append(f"{hour_label} ({chance}%)")
+            if snow_hours:
+                forecast_parts.append(f"Snow likely: {', '.join(snow_hours)}")
+
+        return "\n".join(forecast_parts)
 
     def _fetch_openweathermap(self) -> str:
         key = self._config.openweathermap_api_key

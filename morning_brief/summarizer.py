@@ -26,11 +26,12 @@ def _build_prompt(results: list[FetchResult], config: Config) -> tuple[str, str]
 
 Rules:
 - NO markdown, NO bullet symbols, NO asterisks, NO hashtags — plain text only
+- ALWAYS start with the day and date (e.g. "Sunday, April 27, 2026") as the first line after the greeting
 - Use short punchy sentences separated by line breaks
-- Structure: weather update for the evening, then how markets moved today (frame as "today's action"), then 2-3 top news headlines from the day
+- Structure: weather update for the evening (include forecast details like rain/snow chances if present), then how markets moved today (frame as "today's action"), then 2-3 top news headlines from the day
 - Include the QQQM top holdings if provided
 - Frame everything as a recap of the day, not a preview of what's ahead
-- End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed)
+- End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
 - Target around 800-1000 characters total
 - If a section is missing data, skip it silently{unavailable_note}"""
     else:
@@ -38,11 +39,12 @@ Rules:
 
 Rules:
 - NO markdown, NO bullet symbols, NO asterisks, NO hashtags — plain text only
+- ALWAYS start with the day and date (e.g. "Sunday, April 27, 2026") as the first line after the greeting
 - Use short punchy sentences separated by line breaks
-- Structure: weather, then 2-3 top news headlines (ALWAYS include these — never skip news), then market snapshot, then calendar
+- Structure: weather (include forecast details like rain/snow chances if present), then 2-3 top news headlines (ALWAYS include these — never skip news), then market snapshot, then calendar
 - Include the QQQM top holdings if provided
 - If the market data says "MARKETS ARE CLOSED THIS WEEKEND", mention that markets are closed and frame the numbers as a weekly recap
-- End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed)
+- End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
 - Target around 800-1000 characters total
 - If a section is missing data, skip it silently{unavailable_note}"""
 

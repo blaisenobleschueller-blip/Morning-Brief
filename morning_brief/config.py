@@ -89,7 +89,7 @@ def load_config() -> Config:
         gmail_address=_require("GMAIL_ADDRESS"),
         gmail_app_password=_require("GMAIL_APP_PASSWORD"),
         to_email=os.getenv("TO_EMAIL", ""),
-        recipients_file=os.getenv("RECIPIENTS_FILE", "recipients.json"),
+        recipients_file=os.getenv("RECIPIENTS_FILE", os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "recipients.json")),
 
         # Feature flags
         enable_news=_flag("ENABLE_NEWS", default=True),
