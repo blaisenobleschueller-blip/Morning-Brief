@@ -97,5 +97,12 @@
     "location": "Chicago,US",
     "morning": true,
     "afternoon": false
+  },
+  {
+    "name": "Harry",
+    "email": "henryanrig@gmail.com",
+    "location": "Manhattan,US",
+    "morning": true,
+    "afternoon": false
   }
 ]
