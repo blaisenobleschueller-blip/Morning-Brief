@@ -34,5 +34,54 @@
     "location": "Minneapolis,US",
     "morning": true,
     "afternoon": false
+  },
+  {
+    "name": "EllyBelly",
+    "email": "enobleschueller@tulane.edu",
+    "location": "New Orleans,US",
+    "morning": true,
+    "afternoon": false
+  },
+  {
+    "name": "Mommy Dearest",
+    "email": "petranoble@gmail.com",
+    "location": "Minneapolis,US",
+    "morning": true,
+    "afternoon": false
+  },
+  {
+    "name": "Stint",
+    "email": "nstovitz@gmail.com",
+    "location": "St Louis,US",
+    "morning": true,
+    "afternoon": false
+  },
+  {
+    "name": "Brint",
+    "email": "tylerbrady24@gmail.com",
+    "location": "St Louis,US",
+    "morning": true,
+    "afternoon": false
+  },
+  {
+    "name": "Vint",
+    "email": "Samuelvoda1@gmail.com",
+    "location": "Minneapolis,US",
+    "morning": true,
+    "afternoon": false
+  },
+  {
+    "name": "Gibay",
+    "email": "Maidagabriel018@gmail.com",
+    "location": "Chicago,US",
+    "morning": true,
+    "afternoon": false
+  },
+  {
+    "name": "JH",
+    "email": "jackharich11@gmail.com",
+    "location": "Scottsdale,US",
+    "morning": true,
+    "afternoon": false
   }
 ]
