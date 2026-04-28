@@ -9,7 +9,8 @@ from morning_brief.config import Config
 def send_briefing(body: str, config: Config) -> None:
     """Send the morning briefing via Gmail SMTP."""
     msg = MIMEText(body, "plain")
-    msg["Subject"] = "Afternoon Brief" if config.briefing_style == "afternoon" else "Morning Brief"
+    subjects = {"afternoon": "Afternoon Brief", "midday": "Midday Brief"}
+    msg["Subject"] = subjects.get(config.briefing_style, "Morning Brief")
     msg["From"] = config.gmail_address
     msg["To"] = config.to_email
 

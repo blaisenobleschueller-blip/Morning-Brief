@@ -28,7 +28,7 @@ def _load_recipients(path: str, mode: str) -> list[dict]:
 
 def run() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", choices=["morning", "afternoon"], default="morning")
+    parser.add_argument("--mode", choices=["morning", "midday", "afternoon"], default="morning")
     args = parser.parse_args()
 
     config = load_config()
@@ -75,8 +75,8 @@ def run() -> None:
             recipient_name=name,
             weather_location=location,
         )
-        if args.mode == "afternoon":
-            overrides["briefing_style"] = "afternoon"
+        if args.mode in ("midday", "afternoon"):
+            overrides["briefing_style"] = args.mode
         recipient_config = dataclasses.replace(config, **overrides)
 
         results = list(shared_results)

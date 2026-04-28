@@ -14,6 +14,7 @@ def _build_prompt(results: list[FetchResult], config: Config) -> tuple[str, str]
 
     today = date.today().strftime("%A, %B %-d, %Y")
     name_part = f" for {config.recipient_name}" if config.recipient_name else ""
+    is_midday = config.briefing_style == "midday"
     is_afternoon = config.briefing_style == "afternoon" or getattr(config, '_mode', None) == 'afternoon'
 
     failed = [r.source_name for r in results if not r.success]
@@ -21,7 +22,20 @@ def _build_prompt(results: list[FetchResult], config: Config) -> tuple[str, str]
     if failed:
         unavailable_note = f"\nNote: The following sources were unavailable today: {', '.join(failed)}. Omit those sections."
 
-    if is_afternoon:
+    if is_midday:
+        system = f"""You are a sharp, warm midday briefing assistant. You write a daily lunchtime email update{name_part}.
+
+Rules:
+- NO markdown, NO bullet symbols, NO asterisks, NO hashtags — plain text only
+- ALWAYS start with the day and date (e.g. "Sunday, April 27, 2026") as the first line after the greeting
+- Use short punchy sentences separated by line breaks
+- This is the MIDDAY update. The recipient already received a morning briefing today. DO NOT repeat the same news headlines, weather details, or market numbers from this morning. Focus on what has CHANGED or is NEW since the morning.
+- Structure: any weather changes or afternoon forecast, then midday market movers and notable shifts since the open, then 2-3 NEW news stories that broke since the morning
+- Include updated QQQM and watchlist performance only if there are notable intraday moves
+- End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day and a different quote from the morning brief — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
+- Target around 800-1000 characters total
+- If a section is missing data, skip it silently{unavailable_note}"""
+    elif is_afternoon:
         system = f"""You are a sharp, warm afternoon briefing assistant. You write a daily end-of-day email recap{name_part}.
 
 Rules:
@@ -54,7 +68,7 @@ Rules:
         if r.success and r.content:
             sections.append(f"[{r.source_name.upper()}]\n{r.content}")
 
-    time_of_day = "afternoon" if is_afternoon else "morning"
+    time_of_day = "midday" if is_midday else ("afternoon" if is_afternoon else "morning")
     user = "\n\n".join(sections) + f"\n\nWrite the {time_of_day} briefing now."
 
     return system, user

@@ -4,6 +4,7 @@
     "email": "blaisenobleschueller@gmail.com",
     "location": "Chicago,US",
     "morning": true,
+    "midday": true,
     "afternoon": true
   },
   {
