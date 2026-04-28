@@ -90,5 +90,12 @@
     "location": "Chicago,US",
     "morning": true,
     "afternoon": false
+  },
+  {
+    "name": "Don",
+    "email": "Barrettmlb@gmail.com",
+    "location": "Chicago,US",
+    "morning": true,
+    "afternoon": false
   }
 ]
