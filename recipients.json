@@ -27,5 +27,12 @@
     "location": "Manhattan,US",
     "morning": true,
     "afternoon": false
+  },
+  {
+    "name": "Shoedog",
+    "email": "scottschueller@hotmail.com",
+    "location": "Minneapolis,US",
+    "morning": true,
+    "afternoon": false
   }
 ]
