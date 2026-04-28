@@ -83,5 +83,12 @@
     "location": "Scottsdale,US",
     "morning": true,
     "afternoon": false
+  },
+  {
+    "name": "Zes",
+    "email": "zesigercole@gmail.com",
+    "location": "Chicago,US",
+    "morning": true,
+    "afternoon": false
   }
 ]
