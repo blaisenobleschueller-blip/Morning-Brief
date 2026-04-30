@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import time
 from datetime import date
 
@@ -7,6 +8,22 @@ import anthropic
 
 from morning_brief.config import Config
 from morning_brief.fetchers.base import FetchResult
+
+USED_QUOTES_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "used_quotes.txt")
+
+
+def _load_recent_quotes(limit: int = 60) -> list[str]:
+    try:
+        with open(USED_QUOTES_FILE) as f:
+            quotes = [line.strip() for line in f if line.strip()]
+        return quotes[-limit:]
+    except FileNotFoundError:
+        return []
+
+
+def _save_quote(quote: str) -> None:
+    with open(USED_QUOTES_FILE, "a") as f:
+        f.write(quote + "\n")
 
 
 def _build_prompt(results: list[FetchResult], config: Config) -> tuple[str, str]:
@@ -22,6 +39,12 @@ def _build_prompt(results: list[FetchResult], config: Config) -> tuple[str, str]
     if failed:
         unavailable_note = f"\nNote: The following sources were unavailable today: {', '.join(failed)}. Omit those sections."
 
+    recent_quotes = _load_recent_quotes()
+    if recent_quotes:
+        quotes_block = "\n\nDo NOT use any of these previously used quotes:\n" + "\n".join(f"- {q}" for q in recent_quotes)
+    else:
+        quotes_block = ""
+
     if is_midday:
         system = f"""You are a sharp, warm midday briefing assistant. You write a daily lunchtime email update{name_part}.
 
@@ -34,7 +57,7 @@ Rules:
 - Include updated QQQM and watchlist performance only if there are notable intraday moves
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day and a different quote from the morning brief — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
 - Target around 800-1000 characters total
-- If a section is missing data, skip it silently{unavailable_note}"""
+- If a section is missing data, skip it silently{unavailable_note}{quotes_block}"""
     elif is_afternoon:
         system = f"""You are a sharp, warm afternoon briefing assistant. You write a daily end-of-day email recap{name_part}.
 
@@ -47,7 +70,7 @@ Rules:
 - Frame everything as a recap of the day, not a preview of what's ahead
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
 - Target around 800-1000 characters total
-- If a section is missing data, skip it silently{unavailable_note}"""
+- If a section is missing data, skip it silently{unavailable_note}{quotes_block}"""
     else:
         system = f"""You are a sharp, warm morning briefing assistant. You write a daily email briefing{name_part}.
 
@@ -60,7 +83,7 @@ Rules:
 - If the market data says "MARKETS ARE CLOSED THIS WEEKEND", mention that markets are closed and frame the numbers as a weekly recap
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
 - Target around 800-1000 characters total
-- If a section is missing data, skip it silently{unavailable_note}"""
+- If a section is missing data, skip it silently{unavailable_note}{quotes_block}"""
 
     # Build the data sections
     sections: list[str] = [f"Today is {today}.\n"]
@@ -89,7 +112,16 @@ def summarize(results: list[FetchResult], config: Config, retries: int = 2) -> s
                 system=system,
                 messages=[{"role": "user", "content": user}],
             )
-            return message.content[0].text.strip()
+            text = message.content[0].text.strip()
+
+            # Extract and save the quote (last non-empty line that looks like a quote)
+            lines = [l.strip() for l in text.splitlines() if l.strip()]
+            if lines:
+                last_line = lines[-1]
+                if last_line.startswith('"') or last_line.startswith('\u201c'):
+                    _save_quote(last_line)
+
+            return text
         except anthropic.APIStatusError as e:
             if attempt < retries and e.status_code >= 500:
                 time.sleep(2 ** attempt)
