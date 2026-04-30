@@ -33,7 +33,8 @@
     "email": "scottschueller@hotmail.com",
     "location": "Minneapolis,US",
     "morning": true,
-    "afternoon": false
+    "afternoon": false,
+    "recipes": true
   },
   {
     "name": "EllyBelly",
