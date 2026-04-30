@@ -52,6 +52,7 @@ class Config:
     enable_calendar: bool
     enable_custom: bool
     enable_market: bool
+    enable_sports: bool
 
     # --- Weather ---
     weather_location: str
@@ -97,6 +98,7 @@ def load_config() -> Config:
         enable_calendar=_flag("ENABLE_CALENDAR", default=False),
         enable_custom=_flag("ENABLE_CUSTOM", default=False),
         enable_market=_flag("ENABLE_MARKET", default=True),
+        enable_sports=_flag("ENABLE_SPORTS", default=True),
 
         # Weather
         weather_location=os.getenv("WEATHER_LOCATION", "New York,US"),

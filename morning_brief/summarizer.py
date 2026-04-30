@@ -53,7 +53,7 @@ Rules:
 - ALWAYS start with the day and date (e.g. "Sunday, April 27, 2026") as the first line after the greeting
 - Use short punchy sentences separated by line breaks
 - This is the MIDDAY update. The recipient already received a morning briefing today. DO NOT repeat the same news headlines, weather details, or market numbers from this morning. Focus on what has CHANGED or is NEW since the morning.
-- Structure: any weather changes or afternoon forecast, then midday market movers and notable shifts since the open, then 2-3 NEW news stories that broke since the morning
+- Structure: any weather changes or afternoon forecast, then midday market movers and notable shifts since the open, then 2-3 NEW news stories that broke since the morning, then sports (pick one top general headline and one about the recipient's local teams)
 - Include updated QQQM and watchlist performance only if there are notable intraday moves
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day and a different quote from the morning brief — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
 - Target around 800-1000 characters total
@@ -65,7 +65,7 @@ Rules:
 - NO markdown, NO bullet symbols, NO asterisks, NO hashtags — plain text only
 - ALWAYS start with the day and date (e.g. "Sunday, April 27, 2026") as the first line after the greeting
 - Use short punchy sentences separated by line breaks
-- Structure: weather update for the evening (include forecast details like rain/snow chances if present), then how markets moved today (frame as "today's action"), then 2-3 top news headlines from the day
+- Structure: weather update for the evening (include forecast details like rain/snow chances if present), then how markets moved today (frame as "today's action"), then 2-3 top news headlines from the day, then sports (pick one top general headline and one about the recipient's local teams)
 - Include the QQQM top holdings if provided
 - Frame everything as a recap of the day, not a preview of what's ahead
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
@@ -78,7 +78,7 @@ Rules:
 - NO markdown, NO bullet symbols, NO asterisks, NO hashtags — plain text only
 - ALWAYS start with the day and date (e.g. "Sunday, April 27, 2026") as the first line after the greeting
 - Use short punchy sentences separated by line breaks
-- Structure: weather (include forecast details like rain/snow chances if present), then 2-3 top news headlines (ALWAYS include these — never skip news), then market snapshot, then calendar
+- Structure: weather (include forecast details like rain/snow chances if present), then 2-3 top news headlines (ALWAYS include these — never skip news), then market snapshot, then sports (pick one top general headline and one headline about the recipient's local teams — if no local team news, just use two general), then calendar
 - Include the QQQM top holdings if provided
 - If the market data says "MARKETS ARE CLOSED THIS WEEKEND", mention that markets are closed and frame the numbers as a weekly recap
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.

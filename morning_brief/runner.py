@@ -12,6 +12,7 @@ from morning_brief.fetchers.news import NewsFetcher
 from morning_brief.fetchers.market import MarketFetcher
 from morning_brief.fetchers.calendar import CalendarFetcher
 from morning_brief.fetchers.custom import CustomFetcher
+from morning_brief.fetchers.sports import SportsFetcher
 from morning_brief.summarizer import summarize
 from morning_brief.sender import send_briefing
 
@@ -86,6 +87,13 @@ def run() -> None:
             if not weather.success:
                 print(f"[runner] WARNING: Weather failed for {name} — {weather.error}", file=sys.stderr)
             results = [weather] + results
+
+        if recipient_config.enable_sports:
+            sports = SportsFetcher(recipient_config).fetch()
+            if not sports.success:
+                print(f"[runner] WARNING: Sports failed for {name} — {sports.error}", file=sys.stderr)
+            else:
+                results.append(sports)
 
         if not results:
             print(f"[runner] No data for {name}, skipping.", file=sys.stderr)
