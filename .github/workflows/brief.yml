@@ -40,14 +40,16 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
-          elif [ "$(date -u +%H)" = "11" ]; then
-            echo "mode=morning" >> $GITHUB_OUTPUT
-          elif [ "$(date -u +%H)" = "17" ]; then
-            echo "mode=midday" >> $GITHUB_OUTPUT
-          elif [ "$(date -u +%H)" = "20" ]; then
-            echo "mode=afternoon" >> $GITHUB_OUTPUT
           else
-            echo "mode=afternoon" >> $GITHUB_OUTPUT
+            # Use hour ranges instead of exact matches to handle GitHub Actions cron delays
+            HOUR=$(date -u +%H)
+            if [ "$HOUR" -ge 10 ] && [ "$HOUR" -le 14 ]; then
+              echo "mode=morning" >> $GITHUB_OUTPUT
+            elif [ "$HOUR" -ge 15 ] && [ "$HOUR" -le 19 ]; then
+              echo "mode=midday" >> $GITHUB_OUTPUT
+            else
+              echo "mode=afternoon" >> $GITHUB_OUTPUT
+            fi
           fi
 
       - name: Run brief
