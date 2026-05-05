@@ -75,6 +75,7 @@ def run() -> None:
             to_email=email,
             recipient_name=name,
             weather_location=location,
+            recipient_industry=recipient.get("industry", ""),
             enable_recipes=recipient.get("recipes", False),
         )
         if args.mode in ("midday", "afternoon"):

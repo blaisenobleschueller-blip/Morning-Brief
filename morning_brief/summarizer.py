@@ -45,6 +45,10 @@ def _build_prompt(results: list[FetchResult], config: Config) -> tuple[str, str]
     else:
         quotes_block = ""
 
+    industry_block = ""
+    if config.recipient_industry:
+        industry_block = f"\n- Include a brief INDUSTRY SPOTLIGHT section relevant to the recipient's field: {config.recipient_industry}. One or two sentences about a recent trend, news item, or insight they'd find useful in their work. Keep it punchy and actionable."
+
     recipe_block = ""
     if config.enable_recipes:
         recipe_block = "\n- After the quote, include a RECIPE OF THE DAY: a simple, tasty recipe focusing on high fiber and/or high protein. Include the dish name, a 2-3 sentence description of the flavors, and a quick ingredient list and steps. Keep it to ~150 words. Choose a different recipe every day — vary across cuisines and meal types (breakfast, lunch, dinner, snacks)."
@@ -61,7 +65,7 @@ Rules:
 - Include updated QQQM and watchlist performance only if there are notable intraday moves
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day and a different quote from the morning brief — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
 - Target around 800-1000 characters total
-- If a section is missing data, skip it silently{unavailable_note}{quotes_block}{recipe_block}"""
+- If a section is missing data, skip it silently{unavailable_note}{quotes_block}{industry_block}{recipe_block}"""
     elif is_afternoon:
         system = f"""You are a sharp, warm afternoon briefing assistant. You write a daily end-of-day email recap{name_part}.
 
@@ -74,7 +78,7 @@ Rules:
 - Frame everything as a recap of the day, not a preview of what's ahead
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
 - Target around 800-1000 characters total
-- If a section is missing data, skip it silently{unavailable_note}{quotes_block}{recipe_block}"""
+- If a section is missing data, skip it silently{unavailable_note}{quotes_block}{industry_block}{recipe_block}"""
     else:
         system = f"""You are a sharp, warm morning briefing assistant. You write a daily email briefing{name_part}.
 
@@ -87,7 +91,7 @@ Rules:
 - If the market data says "MARKETS ARE CLOSED THIS WEEKEND", mention that markets are closed and frame the numbers as a weekly recap
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
 - Target around 800-1000 characters total
-- If a section is missing data, skip it silently{unavailable_note}{quotes_block}{recipe_block}"""
+- If a section is missing data, skip it silently{unavailable_note}{quotes_block}{industry_block}{recipe_block}"""
 
     # Build the data sections
     sections: list[str] = [f"Today is {today}.\n"]
@@ -106,7 +110,11 @@ def summarize(results: list[FetchResult], config: Config, retries: int = 2) -> s
 
     system, user = _build_prompt(results, config)
 
-    max_tokens = 1280 if config.enable_recipes else 1024
+    max_tokens = 1024
+    if config.recipient_industry:
+        max_tokens += 128
+    if config.enable_recipes:
+        max_tokens += 256
 
     used = set(_load_recent_quotes())
 

@@ -19,14 +19,16 @@
     "email": "tommywalsh4@gmail.com",
     "location": "Chicago,US",
     "morning": true,
-    "afternoon": false
+    "afternoon": false,
+    "industry": "Supply chain — specifically spot auction market prices for truck loads"
   },
   {
     "name": "GB",
     "email": "markdwgibson@gmail.com",
     "location": "Manhattan,US",
     "morning": true,
-    "afternoon": false
+    "afternoon": false,
+    "industry": "Industrial real estate"
   },
   {
     "name": "Shoedog",
@@ -55,28 +57,32 @@
     "email": "nstovitz@gmail.com",
     "location": "St Louis,US",
     "morning": true,
-    "afternoon": false
+    "afternoon": false,
+    "industry": "PhD student in philosophy, neuroscience, and psychology (focus on philosophy)"
   },
   {
     "name": "Brint",
     "email": "tylerbrady24@gmail.com",
     "location": "St Louis,US",
     "morning": true,
-    "afternoon": false
+    "afternoon": false,
+    "industry": "Medical student"
   },
   {
     "name": "Vint",
     "email": "Samuelvoda1@gmail.com",
     "location": "Minneapolis,US",
     "morning": true,
-    "afternoon": false
+    "afternoon": false,
+    "industry": "Beer sales for Sierra Nevada"
   },
   {
     "name": "Gibay",
     "email": "Maidagabriel018@gmail.com",
     "location": "Chicago,US",
     "morning": true,
-    "afternoon": false
+    "afternoon": false,
+    "industry": "Recruiting — specifically for investment banking"
   },
   {
     "name": "JH",
@@ -90,20 +96,23 @@
     "email": "zesigercole@gmail.com",
     "location": "Chicago,US",
     "morning": true,
-    "afternoon": false
+    "afternoon": false,
+    "industry": "Renewable energy"
   },
   {
     "name": "Don",
     "email": "Barrettmlb@gmail.com",
     "location": "Chicago,US",
     "morning": true,
-    "afternoon": false
+    "afternoon": false,
+    "industry": "Finance at Kraft Heinz"
   },
   {
     "name": "Harry",
     "email": "hanrig@elliman.com",
     "location": "Manhattan,US",
     "morning": true,
-    "afternoon": false
+    "afternoon": false,
+    "industry": "Real estate broker in Manhattan"
   }
 ]

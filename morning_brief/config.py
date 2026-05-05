@@ -81,6 +81,7 @@ class Config:
     sms_target_chars: int
     briefing_style: str  # "concise" or "detailed"
     recipient_name: str
+    recipient_industry: str
     enable_recipes: bool
 
 
@@ -128,5 +129,6 @@ def load_config() -> Config:
         sms_target_chars=_int("SMS_TARGET_CHARS", 280),
         briefing_style=os.getenv("BRIEFING_STYLE", "concise"),
         recipient_name=os.getenv("RECIPIENT_NAME", ""),
+        recipient_industry="",
         enable_recipes=False,
     )
