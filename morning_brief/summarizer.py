@@ -41,7 +41,7 @@ def _build_prompt(results: list[FetchResult], config: Config) -> tuple[str, str]
 
     recent_quotes = _load_recent_quotes()
     if recent_quotes:
-        quotes_block = "\n\nDo NOT use any of these previously used quotes:\n" + "\n".join(f"- {q}" for q in recent_quotes)
+        quotes_block = "\n\nCRITICAL — Do NOT use any of these previously used quotes (not even paraphrased versions). Pick something completely different:\n" + "\n".join(f"- {q}" for q in recent_quotes)
     else:
         quotes_block = ""
 
@@ -108,6 +108,8 @@ def summarize(results: list[FetchResult], config: Config, retries: int = 2) -> s
 
     max_tokens = 1280 if config.enable_recipes else 1024
 
+    used = set(_load_recent_quotes())
+
     for attempt in range(retries + 1):
         try:
             message = client.messages.create(
@@ -123,6 +125,9 @@ def summarize(results: list[FetchResult], config: Config, retries: int = 2) -> s
             if lines:
                 last_line = lines[-1]
                 if last_line.startswith('"') or last_line.startswith('\u201c'):
+                    if last_line in used and attempt < retries:
+                        # Duplicate quote — retry generation
+                        continue
                     _save_quote(last_line)
 
             return text
