@@ -1,22 +1,18 @@
 from __future__ import annotations
 
-from html.parser import HTMLParser
-
-import feedparser
 import httpx
 
 from morning_brief.config import Config
 from morning_brief.fetchers.base import BaseFetcher, FetchResult
 
-ESPN_FEEDS = [
-    ("Top Sports", "https://www.espn.com/espn/rss/news"),
-    ("NFL", "https://www.espn.com/espn/rss/nfl/news"),
-    ("NBA", "https://www.espn.com/espn/rss/nba/news"),
-    ("MLB", "https://www.espn.com/espn/rss/mlb/news"),
-    ("NHL", "https://www.espn.com/espn/rss/nhl/news"),
+ESPN_LEAGUES = [
+    ("NFL", "football", "nfl"),
+    ("NBA", "basketball", "nba"),
+    ("MLB", "baseball", "mlb"),
+    ("NHL", "hockey", "nhl"),
 ]
 
-# Map cities to their teams so the summarizer can pick a local headline
+# Map cities to their teams so the summarizer can highlight local results
 CITY_TEAMS: dict[str, list[str]] = {
     "Chicago": ["Bears", "Bulls", "Cubs", "White Sox", "Blackhawks", "Sky", "Fire"],
     "Manhattan": ["Giants", "Jets", "Knicks", "Nets", "Yankees", "Mets", "Rangers", "Islanders"],
@@ -26,40 +22,45 @@ CITY_TEAMS: dict[str, list[str]] = {
     "Scottsdale": ["Cardinals", "Suns", "Diamondbacks", "Coyotes"],
 }
 
-
-class _HTMLStripper(HTMLParser):
-    def __init__(self) -> None:
-        super().__init__()
-        self._parts: list[str] = []
-
-    def handle_data(self, data: str) -> None:
-        self._parts.append(data)
-
-    def get_text(self) -> str:
-        return " ".join(self._parts)
+_TIMEOUT = 10
 
 
-def _strip_html(text: str) -> str:
-    if not text:
-        return ""
-    stripper = _HTMLStripper()
-    stripper.feed(text)
-    return stripper.get_text().strip()
+def _format_game(event: dict) -> str:
+    """Format a single ESPN event into a readable line."""
+    competition = event["competitions"][0]
+    status_type = event["status"]["type"]
+    state = status_type["state"]  # "pre", "in", "post"
+    detail = event["status"]["type"].get("shortDetail", status_type["description"])
+
+    competitors = competition["competitors"]
+    # ESPN lists home team first (index 0), away team second (index 1)
+    home = competitors[0]
+    away = competitors[1]
+
+    home_name = home["team"]["displayName"]
+    away_name = away["team"]["displayName"]
+
+    if state == "post":
+        home_score = home.get("score", "?")
+        away_score = away.get("score", "?")
+        winner = home_name if home.get("winner") else away_name
+        return f"{away_name} {away_score}, {home_name} {home_score} (Final) — {winner} win"
+    elif state == "in":
+        home_score = home.get("score", "?")
+        away_score = away.get("score", "?")
+        return f"{away_name} {away_score}, {home_name} {home_score} ({detail})"
+    else:
+        return f"{away_name} at {home_name} ({detail})"
 
 
-def _fetch_feed(url: str, max_items: int = 5) -> list[str]:
-    """Fetch top headlines from an RSS feed."""
+def _fetch_league(sport: str, league: str) -> list[str]:
+    """Fetch today's scoreboard for a league."""
+    url = f"https://site.api.espn.com/apis/site/v2/sports/{sport}/{league}/scoreboard"
     try:
-        r = httpx.get(url, headers={"User-Agent": "Mozilla/5.0"}, follow_redirects=True, timeout=10)
-        feed = feedparser.parse(r.text)
-        lines = []
-        for entry in feed.entries[:max_items]:
-            title = _strip_html(entry.get("title", ""))
-            summary = _strip_html(entry.get("summary", entry.get("description", "")))
-            if len(summary) > 150:
-                summary = summary[:147] + "..."
-            lines.append(f"{title}: {summary}" if summary else title)
-        return lines
+        r = httpx.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=_TIMEOUT)
+        r.raise_for_status()
+        events = r.json().get("events", [])
+        return [_format_game(e) for e in events]
     except Exception:
         return []
 
@@ -72,16 +73,25 @@ class SportsFetcher(BaseFetcher):
         city = self._config.weather_location.split(",")[0].strip()
         teams = CITY_TEAMS.get(city, [])
 
-        all_headlines: list[str] = []
-        for feed_name, url in ESPN_FEEDS:
-            headlines = _fetch_feed(url, max_items=3)
-            for h in headlines:
-                all_headlines.append(f"[{feed_name}] {h}")
+        sections: list[str] = []
+        any_games = False
 
-        if not all_headlines:
-            return FetchResult(source_name="Sports", content="", success=False, error="No sports headlines found")
+        for label, sport, league in ESPN_LEAGUES:
+            games = _fetch_league(sport, league)
+            if games:
+                any_games = True
+                sections.append(f"{label}:\n" + "\n".join(f"  {g}" for g in games))
+            else:
+                sections.append(f"{label}: No games today")
 
-        content = f"Recipient's local teams: {', '.join(teams)}\n" if teams else ""
-        content += "\n".join(all_headlines)
+        if not any_games:
+            return FetchResult(
+                source_name="Sports",
+                content="No games scheduled across major leagues today.",
+                success=True,
+            )
+
+        header = f"Recipient's local teams: {', '.join(teams)}\n\n" if teams else ""
+        content = header + "\n\n".join(sections)
 
         return FetchResult(source_name="Sports", content=content, success=True)
