@@ -66,176 +66,135 @@
 "The greatest pleasure in life is doing what people say you cannot do." — Walter Bagehot
 "In any moment of decision, the best thing you can do is the right thing, the next best thing is the wrong thing, and the worst thing you can do is nothing." — Theodore Roosevelt
 "The only person responsible for the quality of the life you live is you." — Oprah Winfrey
-"In the middle of difficulty lies opportunity." — Albert Einstein
-"Courage is not the absence of fear, but rather the assessment that something else is more important than fear." — Franklin D. Roosevelt
-"The only way to deal with an uncertain future is to make the best possible choice with the information you have today." — Ray Dalio
-"The only person you are entirely in charge of is you. Everything else is just noise." — Naval Ravikant
-"The only way to make sense out of change is to plunge into it, move with it, and join the dance." — Alan Watts
-"The obstacle is the way." — Marcus Aurelius
-"The only thing that stands between you and your dream is the will to try and the belief that it is actually possible." — Joel Brown
 "Success is not final, failure is not fatal: it is the courage to continue that counts." — Winston Churchill
-"We are what we repeatedly do. Excellence, then, is not an act, but a habit." — Aristotle
-"The secret of change is to focus all of your energy not on fighting the old, but on building the new." — Socrates
-"Every moment is a fresh beginning." — T.S. Eliot
-"The only way forward is to stay curious about what tomorrow might bring." — Ray Dalio
-"The smallest act of kindness is worth more than the grandest intention." — Oscar Wilde
-"Talent is a pursued interest. Anything you are willing to practice, you can do." — Richard Branson
-"Do not go where the path may lead. Go instead where there is no path and leave a trail." — Ralph Waldo Emerson
-"The world breaks everyone, and afterward, some are strong in the broken places." — Ernest Hemingway
+"Success is not about never making a mistake; it's about what you do the moment you discover you've made one." — Brené Brown
+"Whether you think you can or you think you can't, you're right." — Henry Ford
+"Life consists of what a man is still willing to do." — William James
+"Simplicity is the ultimate sophistication." — Leonardo da Vinci
 "The mind is everything. What you think, you become." — Buddha
-"The greatest threat to our survival is our own complacency." — Al Gore
-"The wound is the place where the Light enters you." — Rumi
-"The test of a first-rate intelligence is the ability to hold two opposed ideas in the mind at the same time and still retain the ability to function." — F. Scott Fitzgerald
-"Do what you can with what you have where you are." — Theodore Roosevelt
-"Everything you want is on the other side of fear." — Jack Canfield
-"The real voyage of discovery consists not in seeking new landscapes, but in having new eyes." — Marcel Proust
-"The great thing in this world is not so much where you stand as in what direction you are moving." — Oliver Wendell Holmes Jr.
-"The quality of your life is determined by the quality of the questions you ask yourself." — Tony Robbins
-"The distance between insanity and genius is measured only by success." — Bruce Feirstein
-"The only way to make a great day better is to keep moving forward with intention." — Jeff Bezos
-"Do not pray for an easy life, pray for the strength to endure a difficult one." — Bruce Lee
-"The only way to do great work is to do it as if nobody is watching." — Maya Angelou
-"The best time to plant a tree was 20 years ago. The second best time is now." — Chinese Proverb
-"The way to get started is to quit talking and begin doing." — Walt Disney
-"The privilege of a lifetime is to become who you truly are." — Carl Jung
-"Start where you are, use what you have, do what you can." — Arthur Ashe
-"The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man." — George Bernard Shaw
-"In a mad world, only the mad are sane." — Akira Kurosawa
-"Do not fear to be eccentric in opinion, for every opinion now accepted was once eccentric." — Bertrand Russell
-"The only way to make today a success is to do something today that your tomorrow self will thank you for." — Sean Patrick Flanery
-"The only way to discover the limits of the possible is to go beyond them." — Arthur C. Clarke
-"The only way to great work is to do it as if you're the only person who will ever know." — Anne Lamott
+"The mind is like water. When it is turbulent, it is difficult to see. When it is calm, everything becomes clear." — Thich Nhat Hanh
 "The only true wisdom is in knowing you know nothing." — Socrates
-"The future is not something we enter. The future is something we create." — Leonard I. Sweet
-"The only way to discover what you're capable of is to attempt things that terrify you." — Morgan Freeman
-"The greatest glory in living lies not in never falling, but in rising every time we fall." — Nelson Mandela
-"The only way to discover a limit is to go beyond it." — Richard Branson
-"The only way to see the future is to believe in what you cannot yet see." — Steve Jobs
-"The only way to go forward is to face what troubles you head on." — Maya Angelou
-"Success is the progressive realization of a worthy goal." — Earl Nightingale
-"The only person you are entirely responsible for is you, and that's liberation." — Denzel Washington
-"The only way to predict the future is to invent it." — Alan Kay
-"The butterfly counts not months but moments, and has time enough." — Rabindranath Tagore
-"The only way to do excellent work is to love what you do." — Steve Jobs
-"It is during our darkest moments that we must focus to see the light." — Aristotle
-"The only way to do great work is to love what you do." — Steve Jobs
-"The only way to learn is to fall, and the only way to grow is to get back up." — Donovan Bailey
-"You cannot discover new oceans unless you have the courage to lose sight of the shore." — André Gide
-"Life is what happens when you're busy making other plans." — John Lennon
-"The only way to understand the world is to observe it carefully, question what you see, and remain humble about how much you don't know." — Carl Sagan
-"The cave you fear to enter holds the treasure you seek." — Joseph Campbell
-"The greatest discovery of all time is that a person can change his future by merely changing his attitude." — Oprah Winfrey
-"The only way to deal with fear is to walk directly through it." — Susan Jeffers
-"The future depends on what you do today." — Mahatma Gandhi
-"The only way to do great work is to care about what you're building, not because anyone's watching, but because you know it matters." — Satya Nadella
-"In reading great literature I become a thousand men and yet remain myself." — C.S. Lewis
-"The days that make us happy make us wise." — John Masefield
-"The only way to live is to accept what is and then decide what comes next." — Anne Frank
-"Happiness is not by chance, but by choice." — Jim Rohn
-"The only way to honor where you come from is to honor where you're going." — Viola Davis
-"The only way to love anything is to realize it could be lost." — G.K. Chesterton
-"The greatest happiness you can give your mother is not a gift you buy, but a life well-lived." — Ralph Marston
-"The greatest minds are not those that know everything, but those that question everything." — Socrates
-"We cannot live only for ourselves. A thousand fibers connect us with our fellow men, and among those fibers, as sympathetic threads, we feel all their joys and sorrows." — Herman Melville
-"The test of love is in the willingness to give." — Margaret Mead
-"The only way to make sense of change is to plunge into it, move with it, and join the dance." — Alan Watts
-"We are not makers of history. We are made by history." — Martin Luther King Jr.
-"You learn more from failure than from success." — Unknown, but popularized by many great leaders throughout history. The point stands: this week's market volatility taught us more than any calm day could.
-"Comparison is the thief of joy, but collaboration is the multiplier of success." — Simon Sinek
-"The only way to learn something truly new is to be willing to look foolish in the process." — Amy Poehler
-"You miss 100 percent of the shots you don't take." — Wayne Gretzky
-"The only way to grow is to embrace uncertainty and move forward anyway." — Reid Hoffman
-"We cannot become what we need to be by remaining what we are." — Oprah Winfrey
+"The test of a first-rate intelligence is the ability to hold two opposed ideas in the mind at the same time and still retain the ability to function." — F. Scott Fitzgerald
+"We cannot live only for ourselves. A thousand fibers connect us with our fellow men; and among those fibers, as sympathetic threads, we feel all that they feel. All that we do for them, we do for ourselves." — Herman Melville
+"The moment we begin to fear the opinions of others and hesitate to tell the truth that is in us, and from motives of policy are silent when we should speak, the divine floods of light begin to dim." — Frederick William Robertson
+"The question isn't whether I'm capable of achieving this—it's whether I'm willing to pay the price." — Socrates taught wisdom through questioning, and that same principle applies to your portfolio: ask yourself not just what you want, but what you're committed to protecting to get there.
+"The ability to observe without evaluating is the highest form of intelligence." — Jiddu Krishnamurti
 "In the middle of difficulty lies opportunity." — Albert Einstein
-"The obstacle in the path becomes the way." — Marcus Aurelius
-"The only way to escape the gravity of your past is to rocket toward a future bigger than your doubts." — Unknown
-"Every person has the power to change the future through one small decision made today." — Tim McGraw
-"The only way we truly progress is by sitting in discomfort long enough to understand what it's teaching us." — David Whyte
-"The master has failed more times than the beginner has ever tried." — Stephen McCranie
-"The only way to find true security is to stop waiting for someone else to hand it to you." — Maya Angelou
-"The world breaks everyone, and afterward many are strong at the broken places." — Ernest Hemingway
-"Everything you want is on the other side of fear." — Jack Canfield
-"The only way to make an error ceasing to be an error is to own it completely." — Ryan Holiday
-"The only thing we have to fear is fear itself." — Franklin D. Roosevelt
-"Do not go where the path may lead, go instead where there is no path and leave a trail." — Ralph Waldo Emerson
-"We accept the love we think we deserve." — Stephen Chbosky
-"The privilege of a lifetime is to become who you truly are." — Carl Jung
-"The only way to achieve what you're truly capable of is to commit fully, knowing that halfway measures produce halfway results." — Peter F. Drucker
-"The man who moves a mountain begins by carrying away small stones." — Confucius
-"Do what you feel in your heart to be right, for you'll be criticized anyway." — Eleanor Roosevelt
-"The greatest threat to democracy is not a bad idea, but indifference to good ones." — Robert F. Kennedy Jr.
-"The only way to deal with an unfree world is to become so absolutely free that very existence is an act of rebellion." — Albert Camus
-"The wound is the place where the Light enters you." — Rumi
-"We are dying from overthinking. We are slowly killing ourselves by drowning in our thoughts." — Warsan Shire
-"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." — Brian Herbert
-"The only way to predict the future is to invent it." — Wait, scratch that. "Tell me and I forget, teach me and I may remember, involve me and I learn." — Benjamin Franklin
-"We are not here merely to make a living. We are here to enrich the world, and we impoverish ourselves if we forget this errand." — Woodrow Wilson
-"The only way to see a brighter future is to act like it's already happening." — Dr. Brené Brown
-"The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man." — George Bernard Shaw
-"The great affair of life is to move." — Thomas Jefferson
-"You are not a drop in the ocean. You are the entire ocean in a drop." — Rumi
-"The quality of your life is determined by the quality of the questions you ask yourself." — Tony Robbins
-"The only way to deal with change is to create it yourself." — Peter Drucker
-"The beautiful thing about learning is that no one can take it away from you." — B.B. King
-"The only way to invent the future is to believe it's possible when everyone else thinks you're crazy." — Marc Benioff
-"The only way to do something well is to love doing it." — Steve Prefontaine
-"The mind is everything. What you think, you become." — Buddha
-"The only way to do something well is to love the work itself, not the outcome it brings." — Mihály Csíkszentmihályi
-"The only way to discover the limits of the possible is to go beyond them into the impossible." — Arthur C. Clarke
-"Success is not final, failure is not fatal: it is the courage to continue that counts." — Winston Churchill
-"The only way to do something truly great is to start before you're ready, knowing that readiness is a myth invented by fear." — Seth Godin
-"The cave you fear to enter holds the treasure you seek." — Joseph Campbell
-"The only way to move forward is to make peace with what you cannot control and direct your energy toward what you can." — Ryan Holiday
-"The secret of change is to focus all of your energy not on fighting the old, but on building the new." — Socrates
-"The only way to do something well is to love the work itself, not the reward it brings." — Mihály Csíkszentmihályi
-"The only way to do great work is to love what you do." — Steve Jobs
-"The only way to grow is to plant seeds you'll never see flower." — Morgan Freeman
-"The only way to make progress is to take risks, because the biggest risk of all is standing still." — Tony Robbins
-"Don't watch the clock; do what it does. Keep going." — Sam Levenson
-"The only way to deal with the world is to master the basics so thoroughly that you can forget about them and focus on what matters." — Naval Ravikant
-"The future belongs to those who believe in the beauty of their dreams." — Eleanor Roosevelt
-"The only way to do something great is to love what you do, but the greater challenge is to keep loving it when the work becomes hard." — Aristotle
-"Do not fear to be eccentric in opinion, for every opinion now accepted was once eccentric." — Bertrand Russell
-"The only certainty is that those who do nothing will accomplish nothing." — Paul McCartney
-"The only way to do tomorrow's work well is to do today's work well." — William Osler
-"Do what you have to do, to do what you want to do." — Denzel Washington
-"The test of a first-rate intelligence is the ability to hold two opposed ideas in mind at the same time and still retain the ability to function." — F. Scott Fitzgerald
-"The only way to deal with an unfair world is to create so much beauty and grace within yourself that you become a living counterargument to cynicism." — Amanda Gorman
-"Nothing is impossible, the word itself says I'm possible." — Audrey Hepburn
-"The only way to make sense out of change is to plunge into it, move with it, and join the dance." — Alan Watts
-"The only way to make a difference is to show up and do the work nobody else wants to do." — Michelle Obama
-"The only way to find out the limitations of the possible is to venture a little way past them into the impossible." — Arthur C. Clarke
-"The only way to predict the future is to create it." — Peter Drucker
-"The only way to achieve excellence is to love the work itself so much that you're willing to do it badly at first." — Ira Glass
-"In the middle of difficulty lies opportunity." — Albert Einstein
-"You don't have to see the whole staircase, just take the first step." — Martin Luther King Jr.
-"The world is a book, and those who do not travel read only one page." — Saint Augustine
-"The impediment to action advances action. What stands in the way becomes the way." — Marcus Aurelius
-"The only way to know if you're on the right path is to walk it and adjust as you go." — Pema Chödrön
-"It is not the mountain we conquer, but ourselves." — Edmund Hillary
-"The only way to do something meaningful is to do it in service of something larger than yourself." — Serena Williams
-"The only way to improve is to embrace what didn't work and build something better from it." — James Clear
-"You miss 100% of the shots you don't take." — Wayne Gretzky
-"Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do." — Mark Twain
-"The only way to deal with an uncertain future is to make the best possible choices with the information you have today." — Daniel Kahneman
-"The only way to see your life's purpose is to look beyond yourself and ask what the world needs most." — Malala Yousafzai
-"The only way forward is to stay curious about what's possible and build relationships with people who see the world differently than you do." — Satya Nadella
-"We are dying from overthinking. We are slowly killing ourselves by drowning in our thoughts." — Wait, scratch that. Here's a better one: "The only way to do great work is to love what you do." — Hold on, that's been used. Let me give you this instead: "The greatest glory in living lies not in never falling, but in rising every time we fall." — Nelson Mandela.
-"It is impossible to live without failing at something, unless you live so cautiously that you might as well not have lived, in which case you fail by default." — J.K. Rowling
-"The great use of life is to spend it for something that will outlast it." — William James
-"The only way to discover what you're capable of is to attempt something that scares you." — Jon Acuff
-"The obstacle in the path becomes the path." — Marcus Aurelius
-"To live is the rarest thing in the world. Most people exist, that is all." — Oscar Wilde
-"The only way to fail is not to try at all." — Norman Vincent Peale
-"The only way to do something is to begin." — Mary Oliver
-"The only way to do anything of note is to have the courage to do it badly first." — Ira Glass
-"The only way to keep your head above water is to keep moving forward, even when the current pushes back." — Harriet Tubman
-"The test of a truly great man is his humility." — John Ruskin
+"We are dying from overthinking. We are slowly killing ourselves by drowning in our thoughts." — Anthony Hopkins
+"The master has failed more times than the beginner has even tried." — Stephen McCranie
 "Everything you want is on the other side of fear." — George Addair
+"We are not makers of history. We are made by history." — Martin Luther King Jr.
+"The obstacles in our path are not something to resent. They are the material we are to work with." — Ryan Holiday
+"The task ahead of you is never as great as the power within you." — Ralph Marston
+"Do not judge me by my successes, judge me by how many times I fell down and got back up again." — Nelson Mandela
+"Do the best you can until you know better. Then when you know better, do better." — Maya Angelou
 "Life is what happens when you're busy making other plans." — John Lennon
-"The only way to deal with fear is to look it square in the face, and when you do, you'll find it's often smaller than you imagined." — Cus D'Amato
-"The only way to deal with fear is to look it straight in the eye, acknowledge it, and move through it anyway." — Cus D'Amato
-"The only way to make the most of what you have is to use it fully, knowing that half measures avail us nothing." — William H. Murray
-"The only way to navigate uncertainty is to stay grounded in what you can control and flexible with everything else." — Ray Dalio
-"The only way to deal with what you cannot control is to control how you respond to it." — Epictetus
-"We are all broken, that's how the light gets in." — Ernest Hemingway
+"What we fear doing most is usually what we most need to do." — Tim Ferriss
+"The seed of great discovery is curiosity, and the soil in which it grows is uncertainty." — Isaac Newton
+"What lies behind us and what lies before us are tiny matters compared to what lies within us." — Ralph Waldo Emerson
+"We are not here merely to make a living. We are here to enrich the world, and we impoverish ourselves if we forget this errand." — Woodrow Wilson
+"The only person you should try to be better than is the person you were yesterday." — James Clear
+"The greatest discovery of all time is that a person can change his future by merely changing his attitude." — Oprah Winfrey
+"The obstacle is the way." — Marcus Aurelius
+"The chief task in life is simply this: to identify and remove obstacles between ourselves and our own success." — Naval Ravikant
+"The way to get started is to quit talking and begin doing." — Walt Disney
+"The greatest wealth is health." — Virgil
+"The only way to predict the future is to invent it." — Alan Kay
+"The only way to make sense out of change is to plunge into it, move with it, and join the dance." — Alan Watts
+"We are what we repeatedly do. Excellence, then, is not an act but a habit." — Aristotle
+"The greater the obstacle, the more glory in overcoming it." — Molière
+"Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment." — Buddha
+"The secret of change is to focus all of your energy not on fighting the old, but on building the new." — Socrates
+"The only way to discover what you're capable of is to keep trying after you think you've failed." — Charles R. Swindoll
+"Your circumstances may be hard, but they will not last if you persevere." — Erskine Caldwell
+"The greatest wealth is a sound body and a peaceful mind." — Plato
+"The wound is the place where the Light enters you." — Rumi
+"The privilege of a lifetime is to become who you truly are." — Carl Jung
+"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." — Brian Herbert
+"You miss 100% of the shots you don't take." — Wayne Gretzky
+"The only way to do great work is to love what you do." — Steve Jobs
+"All we have to decide is what to do with the time that is given us." — J.R.R. Tolkien
+"The most important thing is to keep learning, to enjoy challenge, and to tolerate failure and adversity." — Satya Nadella
+"The beautiful thing about learning is that no one can take it away from you." — B.B. King
+"The way to get ahead is to start now. Not tomorrow, not next week. Now." — Sally Berger
+"The creation of a thousand forests is in one acorn." — Ralph Waldo Emerson
+"The greatest growth happens when we stop waiting for perfect conditions and act on what we can control today." — Epictetus
+"The great use of life is to spend it for something that will outlast it." — William James
+"The great thing about being alive is the privilege to make something that didn't exist before." — Maria Popova
+"The greatest glory in living lies not in never falling, but in rising every time we fall." — Nelson Mandela
+"The purpose of our lives is to be happy." — Dalai Lama
+"Courage is not the absence of fear, but rather the assessment that something else is more important than fear." — Franklin D. Roosevelt
+"The greatest discovery of your own potential happens when you stop comparing your beginning to someone else's middle." — Tara Westover
+"The cave you fear to enter holds the treasure you seek." — Joseph Campbell
+"The only real failure in life is the one from which we learn nothing." — Henry Ford
+"The days that make us happy make us wise." — John Masefield
+"The only true wisdom is in knowing you know nothing." — Socrates.
+"The future belongs to those who believe in the beauty of their dreams." — Eleanor Roosevelt
+"The greatest gift one generation can give to another is a world worth inheriting." — George F. Kennan
+"Success is not final, failure is not fatal: it is the courage to continue that counts." — Winston Churchill
+"The only way to discover what you're truly capable of is to continue when comfort would tell you to stop." — Bear Grylls
+"The best way to predict the future is to invent it." — Peter Drucker
+"The first rule of any technology used in a business is that automation applied to an efficient operation will magnify the efficiency. The second is that automation applied to an inefficient operation will magnify the inefficiency." — Bill Gates
+"The greatest glory lies not in never making a mistake, but in rising every time we fall." — Confucius
+"The obstacles we face today will either become the stepping stones for tomorrow's success or the evidence we weren't ready." — Jon Gordon
+"The function of freedom is to free someone else." — Toni Morrison
+"Everything has beauty, but not everyone can see." — Confucius
+"The only person you are destined to become is the person you decide to be." — Ralph Waldo Emerson
+"The more I want to get something done, the less I call it work." — Richard Bach
+"In the middle of difficulty lies opportunity." — Albert Einstein
+"The best time to plant a tree was 20 years ago. The second best time is now." — Chinese Proverb
+"The strength of character is the ability to embrace what scares you and move forward anyway." — Brené Brown
+"We cannot live only for ourselves. A thousand fibers connect us with our fellow men; and among those fibers, as sympathetic threads, we feel a responsibility for the actions of others." — Herman Melville
+"The only way out is through." — Robert Frost
+"The master has failed more times than the beginner has even tried." — Stephen McCranie
+"The greatest test of character is not success but failure and how you respond to it." — Unknown
+"The greatest discovery of your generation will not be something you find, but something you create that changes how others see the world." — Steve Blank
+"The brick walls are there for a reason. The brick walls are not there to keep us out. The brick walls are there to give us a chance to show how badly we want something." — Randy Pausch
+"The only way to live is to accept the present moment fully, while remaining open to what tomorrow might bring." — Maxine Hong Kingston
+"The way forward lies not in having all the answers, but in developing the courage to sit with difficult questions long enough to discover what they teach us." — Parker Palmer
+"The greatest wealth is not measured in dollars, but in the difference you make in someone's life." — Muhammad Yunus
+"The task we must set for ourselves is not to feel secure, but to be able to tolerate insecurity." — Erich Fromm
+"The true delight is in the finding out rather than in the knowing." — Isaac Asimov
+"The quality of your life is determined by the quality of the questions you ask yourself." — Tony Robbins
+"Not all of us can do great things. But we can do small things with great love." — Mother Teresa
+"The obstacle is the way. What blocks our path becomes the path." — Marcus Aurelius
+"You are not a drop in the ocean. You are the entire ocean in a drop." — Rumi
+"Do not go where the path may lead; go instead where there is no path and leave a trail." — Ralph Waldo Emerson
+"Life is what happens when you're busy making other plans." — John Lennon
+"The greatest act is not to achieve something once, but to continue striving to become better than you were yesterday." — Maya Angelou
+"The man who moves a mountain begins by carrying away small stones." — Confucius
+"The glory of creation is in its infinite diversity." — Salman Rushdie
+"Everything you want is on the other side of fear." — George Addair
+"Bloom where you are planted, but don't be afraid to uproot yourself when the soil no longer nourishes your growth." — Warsan Shire
+"We are not makers of history. We are made by history." — Martin Luther King Jr.
+"The task is not so much to see what no one has yet seen, but to think what nobody has yet thought about that which everybody sees." — Erwin Schrödinger
+"Do what you can, with what you have, where you are." — Theodore Roosevelt
+"In every conceivable manner, the family is link to our past, bridge to our future, and bond to one another." — Alex Haley
+"Between stimulus and response there is a space. In that space is our power to choose our response. In our response lies our growth and our freedom." — Viktor Frankl
+"What we think, we become." — Buddha
+"Knowing is not enough; we must apply. Willing is not enough; we must do." — Johann Wolfgang von Goethe
+"The only way to do great work is to love what you do." — Steve Jobs
+"The greatest reward for work is not what you get for it, but what you become by doing it." — Ralph Waldo Emerson
+"You miss 100% of the shots you don't take." — Wayne Gretzky
+"The wound is the place where the Light enters you." — Rumi
+"Everything you do right now is for your future self. Make the person you're becoming proud of the choices you're making today." — Sean Patrick Flanery
+"The future will either embrace your vision or reject it, but it will never ignore your effort." — Seth Godin
+"The man who has confidence in himself is the first to admit his limitations." — Ralph Waldo Emerson
+"You cannot change what you do not acknowledge. The moment you fully own your darkness, you can begin to choose differently." — Unknown
+"You cannot discover new oceans unless you have the courage to lose sight of the shore." — André Gide
+"The secret of change is to focus all of your energy not on fighting the old, but on building the new." — Socrates
+"You learn more from failure than from success." — Unknown
+"You are braver than you believe, stronger than you seem, and smarter than you think." — A.A. Milne
+"The greatest discoveries happen when curiosity meets courage. Stay open, stay bold." — Maya Plisetskaya
+"The greatest adventure is what lies ahead." — J.R.R. Tolkien
+"Every morning brings new potential, but only for those who are awake enough to seize it." — Ralph Marston
+"The only limit to our realization of tomorrow will be our doubts of today." — Franklin D. Roosevelt
+"The cave you fear to enter holds the treasure you seek." — Joseph Campbell
+"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." — Brian Herbert
+"The real voyage of discovery consists not in seeking new landscapes, but in having new eyes." — Marcel Proust
+"Success is not final, failure is not fatal: it is the courage to continue that counts." — Winston Churchill
+"The privilege of a lifetime is to become who you truly are." — Carl Jung
+"Don't watch the clock; do what it does. Keep going." — Sam Levenson
+"The privilege of a lifetime is being who you truly are." — Oscar Wilde
+"The only way to discover the limits of the possible is to go beyond them into the impossible." — Arthur C. Clarke
+"We are dying from overthinking. We are slowly killing ourselves by drowning in our thoughts. Thinking has become a disease." — Anthony Hopkins

@@ -180,8 +180,12 @@ class MarketFetcher(BaseFetcher):
                         lines.append(f"  {symbol}: {price} ({pct})")
 
             else:
+                # Before market open, the data is yesterday's close
+                is_morning = self._config.briefing_style not in ("midday", "afternoon")
+                tag = "Yesterday's Close" if is_morning else "Market Indices"
+
                 # --- Major indices ---
-                lines.append("Market Indices:")
+                lines.append(f"{tag}:")
                 for symbol, label in _INDICES:
                     price, pct = _price_and_pct(symbol)
                     lines.append(f"  {label}: {price} ({pct})")
@@ -201,7 +205,8 @@ class MarketFetcher(BaseFetcher):
 
                 # --- User watchlist ---
                 if self._config.stock_watchlist:
-                    lines.append("\nWatchlist:")
+                    watchlist_tag = "Watchlist (yesterday)" if is_morning else "Watchlist"
+                    lines.append(f"\n{watchlist_tag}:")
                     for symbol in self._config.stock_watchlist:
                         price, pct = _price_and_pct(symbol)
                         lines.append(f"  {symbol}: {price} ({pct})")

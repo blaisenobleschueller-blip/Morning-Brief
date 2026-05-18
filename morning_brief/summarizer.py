@@ -88,6 +88,7 @@ Rules:
 - Use short punchy sentences separated by line breaks
 - Structure: weather (include forecast details like rain/snow chances if present), then 2-3 top news headlines (ALWAYS include these — never skip news), then market snapshot, then sports (pick one top general headline and one headline about the recipient's local teams — if no local team news, just use two general), then calendar
 - Include the QQQM top holdings if provided
+- IMPORTANT: The morning brief runs before markets open. If the market data is labeled "Yesterday's Close", present ALL market numbers as yesterday's results (e.g. "Yesterday the S&P closed at…", "Markets closed higher yesterday"). NEVER describe them as happening today or right now.
 - If the market data says "MARKETS ARE CLOSED THIS WEEKEND", mention that markets are closed and frame the numbers as a weekly recap
 - End with one unique fun fact relevant to today's date or the news, then one short inspiring quote (attributed). IMPORTANT: Choose a different quote every day — never repeat recent quotes. Draw from a wide range of authors, leaders, athletes, scientists, and philosophers.
 - Target around 800-1000 characters total
