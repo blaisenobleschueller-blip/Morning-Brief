@@ -29,7 +29,7 @@ def _load_recipients(path: str, mode: str) -> list[dict]:
 
 def run() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", choices=["morning", "midday", "afternoon"], default="morning")
+    parser.add_argument("--mode", choices=["morning", "midday", "afternoon", "evening"], default="morning")
     args = parser.parse_args()
 
     config = load_config()
@@ -78,7 +78,7 @@ def run() -> None:
             recipient_industry=recipient.get("industry", ""),
             enable_recipes=recipient.get("recipes", False),
         )
-        if args.mode in ("midday", "afternoon"):
+        if args.mode in ("midday", "afternoon", "evening"):
             overrides["briefing_style"] = args.mode
         recipient_config = dataclasses.replace(config, **overrides)
 

@@ -1,10 +1,9 @@
-name: Morning & Afternoon Brief
+name: Morning & Evening Brief
 
 on:
   schedule:
     - cron: "30 11 * * *"  # 6:30 AM CST (UTC-6)
-    - cron: "0 17 * * *"   # 12:00 PM CST (UTC-5) / noon CDT
-    - cron: "15 20 * * 1-5"  # 3:15 PM CST (UTC-5) weekdays only, right after market close
+    - cron: "0 0 * * *"    # 7:00 PM CST (UTC-5) / evening CDT
   workflow_dispatch:
     inputs:
       mode:
@@ -14,8 +13,7 @@ on:
         type: choice
         options:
           - morning
-          - midday
-          - afternoon
+          - evening
 
 permissions:
   contents: write
@@ -48,10 +46,8 @@ jobs:
             HOUR=$(date -u +%H)
             if [ "$HOUR" -ge 10 ] && [ "$HOUR" -le 14 ]; then
               echo "mode=morning" >> $GITHUB_OUTPUT
-            elif [ "$HOUR" -ge 15 ] && [ "$HOUR" -le 19 ]; then
-              echo "mode=midday" >> $GITHUB_OUTPUT
             else
-              echo "mode=afternoon" >> $GITHUB_OUTPUT
+              echo "mode=evening" >> $GITHUB_OUTPUT
             fi
           fi
 
