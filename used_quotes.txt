@@ -397,3 +397,4 @@
 "Knowing yourself is the beginning of all wisdom." — Aristotle
 "The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the world to himself. Therefore, all progress depends on the unreasonable man." — George Bernard Shaw
 "Life is what happens when you're busy making other plans." — John Lennon
+"The only way to predict the future is to invent it." — Alan Kay
