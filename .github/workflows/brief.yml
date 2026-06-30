@@ -42,9 +42,11 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
           else
-            # Use hour ranges instead of exact matches to handle GitHub Actions cron delays
-            HOUR=$(date -u +%H)
-            if [ "$HOUR" -ge 10 ] && [ "$HOUR" -le 14 ]; then
+            # Match on which cron schedule triggered the run, not the current hour.
+            # github.event.schedule is the exact cron string that fired.
+            # This avoids misclassification when GitHub Actions delays a run by hours.
+            SCHED="${{ github.event.schedule }}"
+            if [ "$SCHED" = "30 11 * * *" ]; then
               echo "mode=morning" >> $GITHUB_OUTPUT
             else
               echo "mode=evening" >> $GITHUB_OUTPUT
