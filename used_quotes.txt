@@ -466,3 +466,4 @@
 "It is during our darkest moments that we must focus to see the light." — Aristotle
 "The greater the obstacle, the more glory in overcoming it." — Molière
 "The only true failure is the failure to try." — George Bernard Shaw
+"The best way to predict the future is to invent it." — Alan Kay
